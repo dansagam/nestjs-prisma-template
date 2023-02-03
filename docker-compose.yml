@@ -4,11 +4,11 @@ services:
     build:
       context: .
       dockerfile: docker/dev/Dockerfile
-    image: bg_boiler_api
-    container_name: bg_boiler_container
-    command: [sh, -c, "cd /usr/src/app npx prisma migrate dev && yarn run dev"]
+    image: nestjs_bg_template_api
+    container_name: nestjs_bg_template_container
+    command: [sh, -c, "cd /usr/src/app npx prisma migrate dev && yarn run start:dev"]
     ports:
-      - 5821:5821
+      - 6541:6541
     env_file:
       - ./.env
     restart: unless-stopped
