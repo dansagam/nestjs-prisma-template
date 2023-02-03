@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/dev/Dockerfile
+    image: bg_boiler_api
+    container_name: bg_boiler_container
+    command: [sh, -c, "cd /usr/src/app npx prisma migrate dev && yarn run dev"]
+    ports:
+      - 5821:5821
+    env_file:
+      - ./.env
+    restart: unless-stopped
+    volumes:
+      - ./:/usr/src/app
+    # environment:
+    #   NODE_ENV: productions
+
+# networks:
+#   backend-server:
+    
