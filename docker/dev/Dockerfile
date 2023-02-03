@@ -7,9 +7,10 @@ COPY ["package.json", "yarn.lock*", "./"]
 
 RUN yarn global add  typescript
 
-RUN yarn global add nodemon
+# RUN yarn global add nodemon
 RUN yarn global add corepack
 # RUN yarn global add concurrently
+RUN yarn global add @nestjs/cli
 
 RUN yarn install 
 COPY . .
