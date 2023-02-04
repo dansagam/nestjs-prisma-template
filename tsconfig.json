@@ -18,5 +18,10 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false
-  }
+  },
+  "include": [
+    "src/**/*"
+    // "./commitlint.config.ts"
+  ],
+  "exclude": ["./node_modules", "./build", "**/*.spec.ts"]
 }
